@@ -63,4 +63,7 @@
     <Build Include="Tables\ImagesGroup.sql" />
     <Build Include="Tables\ImageResolution.sql" />
   </ItemGroup>
+  <ItemGroup>
+    <PostDeploy Include="Script.PostDeployment1.sql" />
+  </ItemGroup>
 </Project>
