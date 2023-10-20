@@ -57,13 +57,20 @@
   <ItemGroup>
     <Folder Include="Properties" />
     <Folder Include="Tables" />
+    <Folder Include="PostDeploy" />
+    <Folder Include="Data" />
+    <Folder Include="PreDeploy" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="Tables\Images.sql" />
     <Build Include="Tables\ImagesGroup.sql" />
-    <Build Include="Tables\ImageResolution.sql" />
+    <Build Include="Tables\ImageResolutions.sql" />
+    <PreDeploy Include="1_PreDeploy.sql" />
   </ItemGroup>
   <ItemGroup>
-    <PostDeploy Include="Script.PostDeployment1.sql" />
+    <PostDeploy Include="2_PostDeploy.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\ImageResolutions.sql" />
   </ItemGroup>
 </Project>
