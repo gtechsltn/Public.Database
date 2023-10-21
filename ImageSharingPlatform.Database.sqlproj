@@ -66,6 +66,8 @@
     <Build Include="Tables\ImagesGroup.sql" />
     <Build Include="Tables\ImageResolutions.sql" />
     <PreDeploy Include="1_PreDeploy.sql" />
+    <Build Include="Tables\Users.sql" />
+    <None Include="Data\Users.sql" />
   </ItemGroup>
   <ItemGroup>
     <PostDeploy Include="2_PostDeploy.sql" />

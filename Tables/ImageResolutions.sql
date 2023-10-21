@@ -1,7 +1,13 @@
-CREATE TABLE [dbo].[ImageResolutions]
+CREATE TABLE ImageResolutions
 (
-	[Id] [bigint] IDENTITY(1,1) NOT NULL,
-	[Name] [nvarchar](50) NOT NULL
+	Id BIGINT IDENTITY(1,1) NOT NULL,
+	[Guid] UNIQUEIDENTIFIER NOT NULL,
+	[Name] NVARCHAR(25) NOT NULL,
 
-	CONSTRAINT [PK_ImageResolution] PRIMARY KEY CLUSTERED ([Id] ASC)
+	CreatedBy BIGINT NOT NULL,
+	CreatedOn DATETIME2(0) NOT NULL,
+	ModifiedBy BIGINT NULL,
+	ModifiedOn DATETIME2(0) NULL,
+
+	CONSTRAINT PK_ImageResolution PRIMARY KEY CLUSTERED (Id ASC)
 )

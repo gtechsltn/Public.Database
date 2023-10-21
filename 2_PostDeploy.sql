@@ -1,1 +1,2 @@
-﻿:r .\Data\ImageResolutions.sql	
+﻿:r .\Data\Users.sql
+:r .\Data\ImageResolutions.sql
