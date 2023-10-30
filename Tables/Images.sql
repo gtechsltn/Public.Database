@@ -13,6 +13,7 @@ CREATE TABLE Images
 	
 	CONSTRAINT PK_Images PRIMARY KEY CLUSTERED (Id ASC),
 	CONSTRAINT FK_Images_Resolution FOREIGN KEY(Resolution) REFERENCES ImageResolutions (Id),
-	CONSTRAINT FK_Images_ImageGroups FOREIGN KEY([Group]) REFERENCES ImageGroups (Id)
-	
+	CONSTRAINT FK_Images_Group FOREIGN KEY([Group]) REFERENCES ImageGroups (Id),
+	CONSTRAINT FK_Images_CreatedBy FOREIGN KEY(CreatedBy) REFERENCES Users (Id),
+	CONSTRAINT FK_Images_ModifiedBy FOREIGN KEY(ModifiedBy) REFERENCES Users (Id)
 )
