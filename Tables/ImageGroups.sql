@@ -10,6 +10,7 @@ CREATE TABLE ImageGroups
 	ModifiedOn DATETIME2(0) NULL,
 
 	CONSTRAINT PK_ImageGroups PRIMARY KEY CLUSTERED (Id ASC),
+	CONSTRAINT UQ_ImageGroups_Guid UNIQUE ([Guid] ASC),
 	CONSTRAINT FK_ImageGroups_CreatedBy FOREIGN KEY(CreatedBy) REFERENCES Users (Id),
 	CONSTRAINT FK_ImageGroups_ModifiedBy FOREIGN KEY(ModifiedBy) REFERENCES Users (Id)
 )

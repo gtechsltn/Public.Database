@@ -10,6 +10,7 @@ CREATE TABLE ImageResolutions
 	ModifiedOn DATETIME2(0) NULL,
 
 	CONSTRAINT PK_ImageResolutions PRIMARY KEY CLUSTERED (Id ASC),
+	CONSTRAINT UQ_ImageResolutions_Guid UNIQUE ([Guid] ASC),
 	CONSTRAINT FK_ImageResolutions_CreatedBy FOREIGN KEY(CreatedBy) REFERENCES Users (Id),
 	CONSTRAINT FK_ImageResolutions_ModifiedBy FOREIGN KEY(ModifiedBy) REFERENCES Users (Id)
 )
