@@ -1,19 +1,13 @@
-# Starter pipeline
-# Start with a minimal pipeline that you can customize to build and deploy your code.
-# Add steps that build, run tests, deploy, and more:
-# https://aka.ms/yaml
-
-trigger:
-- main
-
 pool:
-  vmImage: ubuntu-latest
+  name: default
 
-steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
-
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
+trigger: none
+jobs:
+  - job: BuildAndTests
+    displayName: "Build docker image and run tests"
+    steps:
+      - task: VSBuild@1
+        inputs:
+          solution: '**\*.sln'
+          configuration: 'Release'
+          clean: true
