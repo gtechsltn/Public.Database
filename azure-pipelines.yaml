@@ -3,8 +3,7 @@ pool:
 
 trigger: none
 jobs:
-  - job: BuildAndTests
-    displayName: "Build docker image and run tests"
+  - job: Build
     steps:
       - task: VSBuild@1
         inputs:
