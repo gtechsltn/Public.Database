@@ -1,0 +1,23 @@
+pool:
+  name: default
+
+trigger: none
+jobs:
+  - job: Build
+    steps:
+      - task: VSBuild@1
+        inputs:
+          solution: '**\*.sln'
+          configuration: 'Release'
+          clean: true
+      - task: CopyFiles@2    
+        displayName: 'Copy Files to: $(build.artifactstagingdirectory)'    
+        inputs:    
+          SourceFolder: '$(system.defaultworkingdirectory)'    
+          Contents: '**/bin/Release/Public.Database.dacpac'    
+          TargetFolder: '$(build.artifactstagingdirectory)'    
+      - task: PublishPipelineArtifact@1
+        inputs:
+          targetPath: '$(build.artifactstagingdirectory)'
+          artifact: 'Public.Database'
+          publishLocation: 'pipeline'
