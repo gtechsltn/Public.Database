@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <Name>ImageSharingPlatform.Database</Name>
+    <Name>Public.Database</Name>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectVersion>4.1</ProjectVersion>
     <ProjectGuid>{37ac6ac7-d8f0-4d9a-9ef1-e89f99fdb3b2}</ProjectGuid>
@@ -11,8 +11,8 @@
     <OutputType>Database</OutputType>
     <RootPath>
     </RootPath>
-    <RootNamespace>ImageSharingPlatform.Database</RootNamespace>
-    <AssemblyName>ImageSharingPlatform.Database</AssemblyName>
+    <RootNamespace>Public.Database</RootNamespace>
+    <AssemblyName>Public.Database</AssemblyName>
     <ModelCollation>1033, CI</ModelCollation>
     <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
     <DeployToDatabase>True</DeployToDatabase>
