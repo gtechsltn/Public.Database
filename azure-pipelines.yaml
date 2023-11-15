@@ -14,10 +14,10 @@ jobs:
         displayName: 'Copy Files to: $(build.artifactstagingdirectory)'    
         inputs:    
           SourceFolder: '$(system.defaultworkingdirectory)'    
-          Contents: '**/bin/Release/Database.dacpac'    
+          Contents: '**/bin/Release/Public.Database.dacpac'    
           TargetFolder: '$(build.artifactstagingdirectory)'    
       - task: PublishPipelineArtifact@1
         inputs:
           targetPath: '$(build.artifactstagingdirectory)'
-          artifact: 'Database'
+          artifact: 'Public.Database'
           publishLocation: 'pipeline'
