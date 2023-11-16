@@ -10,14 +10,8 @@ jobs:
           solution: '**\*.sln'
           configuration: 'Release'
           clean: true
-      - task: CopyFiles@2    
-        inputs:
-          SourceFolder: '$(system.defaultworkingdirectory)'
-          Contents: '**/bin/Release/Public.Database.dacpac'
-          TargetFolder: '$(build.artifactstagingdirectory)'
-          flattenFolders: true
       - task: PublishPipelineArtifact@1
         inputs:
-          targetPath: '$(build.artifactstagingdirectory)'
+          targetPath: 'bin/Release/Public.Database.dacpac'
           artifact: 'Public.Database'
           publishLocation: 'pipeline'
