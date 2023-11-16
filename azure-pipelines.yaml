@@ -11,11 +11,11 @@ jobs:
           configuration: 'Release'
           clean: true
       - task: CopyFiles@2    
-        displayName: 'Copy Files to: $(build.artifactstagingdirectory)'    
-        inputs:    
-          SourceFolder: '$(system.defaultworkingdirectory)'    
-          Contents: '**/bin/Release/Public.Database.dacpac'    
-          TargetFolder: '$(build.artifactstagingdirectory)'    
+        inputs:
+          SourceFolder: '$(system.defaultworkingdirectory)'
+          Contents: '**/bin/Release/Public.Database.dacpac'
+          TargetFolder: '$(build.artifactstagingdirectory)'
+          flattenFolders: true
       - task: PublishPipelineArtifact@1
         inputs:
           targetPath: '$(build.artifactstagingdirectory)'
