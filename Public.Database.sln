@@ -7,6 +7,7 @@ Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Public.Database", "Public.D
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{2BFA2603-80E5-4053-9465-601C4C871C7B}"
 	ProjectSection(SolutionItems) = preProject
+		.nuspec = .nuspec
 		azure-pipelines.yaml = azure-pipelines.yaml
 	EndProjectSection
 EndProject
