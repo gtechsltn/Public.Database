@@ -6,18 +6,28 @@ jobs:
   - job: Build
     steps:
       - task: VSBuild@1
+        displayName: "Build"
         inputs:
           solution: '**\*.sln'
           configuration: 'Release'
           clean: true
-      - task: CopyFiles@2    
-        displayName: 'Copy Files to: $(build.artifactstagingdirectory)'    
-        inputs:    
-          SourceFolder: '$(system.defaultworkingdirectory)'    
-          Contents: '**/bin/Release/Public.Database.dacpac'    
-          TargetFolder: '$(build.artifactstagingdirectory)'    
-      - task: PublishPipelineArtifact@1
+      - task: NuGetCommand@2
+        displayName: "Create nuget"
         inputs:
-          targetPath: '$(build.artifactstagingdirectory)'
+          command: 'pack'
+          packagesToPack: '.nuspec'
+          configuration: 'Release'
+          versioningScheme: 'off'
+      - task: DotNetCoreCLI@2
+        displayName: "Push nuget"
+        inputs:
+          command: 'push'
+          packagesToPush: '$(Build.ArtifactStagingDirectory)/*.nupkg'
+          nuGetFeedType: 'internal'
+          publishVstsFeed: 'fa87d356-d9e8-410c-bf26-0078ed3b4646/d6f03ca5-d849-4f99-8de6-b510f6143d44'
+      - task: PublishPipelineArtifact@1
+        displayName: "Publish dacpac"
+        inputs:
+          targetPath: 'bin/Release/Public.Database.dacpac'
           artifact: 'Public.Database'
           publishLocation: 'pipeline'
