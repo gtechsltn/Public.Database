@@ -8,6 +8,6 @@
     <description>Dacpac of Public.Database</description>
   </metadata>
     <files>
-        <file src="bin\Release\*.dacpac" target="tools" />
+        <file src="bin\Release\*.dacpac"/>
     </files>
 </package>
