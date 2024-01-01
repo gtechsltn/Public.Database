@@ -4,6 +4,6 @@ INSERT INTO @Table VALUES ('Graphics Interchange Format', 'GIF'), ('Joint Photog
 
 MERGE INTO ImageTypes T USING @Table S ON S.[Name] = T.[Name]
 WHEN NOT MATCHED BY SOURCE THEN DELETE
-WHEN NOT MATCHED BY TARGET THEN INSERT ([Name], Abbreviation, CreatedBy, CreatedOn) VALUES (S.[Name], 1, GETDATE())
+WHEN NOT MATCHED BY TARGET THEN INSERT ([Name], Abbreviation, CreatedBy, CreatedOn) VALUES (S.[Name], S.Abbreviation, 1, GETDATE())
 WHEN MATCHED THEN UPDATE SET Abbreviation = S.Abbreviation;
 GO
