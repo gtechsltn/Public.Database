@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>Public.Database.Dacpac</id>
-    <version>1.0.3</version>
+    <version>1.0.4</version>
     <authors>Michael Trullas Garcia</authors>
     <projectUrl>https://github.com/michaeltg17/Public.Database</projectUrl>
     <description>Dacpac of Public.Database</description>
