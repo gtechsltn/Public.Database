@@ -11,6 +11,8 @@ CREATE TABLE Images
 	ModifiedBy BIGINT NULL,
 	ModifiedOn DATETIME2(0) NULL,
 	
+	IsTest BIT NOT NULL DEFAULT(0),
+
 	CONSTRAINT PK_Images PRIMARY KEY CLUSTERED (Id ASC),
 	CONSTRAINT UQ_Images_Guid UNIQUE ([Guid] ASC),
 	CONSTRAINT FK_Images_Resolution FOREIGN KEY(Resolution) REFERENCES ImageResolutions (Id),

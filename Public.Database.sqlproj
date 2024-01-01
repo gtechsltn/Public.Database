@@ -68,6 +68,10 @@
     <PreDeploy Include="1_PreDeploy.sql" />
     <Build Include="Tables\Users.sql" />
     <None Include="Data\Users.sql" />
+    <Build Include="Tables\ImageTypes.sql" />
+    <None Include="Data\ImageTypes.sql" />
+    <Build Include="Tables\ImageFileExtensions.sql" />
+    <None Include="Data\ImageFileExtensions.sql" />
   </ItemGroup>
   <ItemGroup>
     <PostDeploy Include="2_PostDeploy.sql" />
